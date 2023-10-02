@@ -9,12 +9,21 @@ const choiceD = document.querySelector('.choiceD');
 const startBtn = document.querySelector('.start-btn');
 const nextBtn = document.querySelector('.nextBtn');
 const submitBtn = document.querySelector('.submitBtn');
+const countDown = document.querySelector('.timer');
 
 
-let time; // time variable for the timer that will be used to set the timer
-let score; // score variable that will be used to set the score
-
+// start quiz function
 const startQuiz = () => {
+  // start timer for quiz questions
+  const startTimer = setInterval(() => {
+    countDown.textContent--;
+    if (countDown.textContent === '0') {
+      clearInterval(startTimer);
+    }
+  }, 1000);
+  
+  // hide start button 
+  startBtn.classList.add('hide');
   console.log('start quiz');
 };
 
