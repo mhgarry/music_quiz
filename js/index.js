@@ -15,15 +15,25 @@ const nextBtn = document.querySelector('.next-btn');
 // current question index
 let currentQuestion = 0;
 // current time
-let time = 10;
 // current score
 let score = 0;
 
+// const startTimer = () => {
+//  let time = 10;
+//  time = setInterval(() => {
+//   time --
+//  }, 1000)
+//  if (time <=0 ) {
+//   clearInterval(time)
+//  }
+// }
+
+//start quiz and hide intro screen and show quiz screen
 const quizStart = () => {
   startBtn.classList.add('hidden');
   introText.classList.add('hidden');
   theQuiz.classList.remove('hidden');
-  
+  startTimer();
 };
 
 startBtn.addEventListener('click', () => {
