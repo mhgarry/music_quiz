@@ -111,7 +111,60 @@ const questions = [
     choiceC: "The Pixies",
     choiceD: "Dinosaur Jr.",
   },
-  
+  {
+    question: "Where is Bruce Springstean's self proclaimed favorite place to play in his home state of New Jersey?",
+    choiceA: "The Stone Pony",
+    choiceB: "Madison Square Garden",
+    choiceC: "PNC Arena",
+    choiceD: "The Meadowlands"
+  },
+  // question 15
+  {
+    question: "What city in central New Jersey is knwon for passionate basement shows in the late '90s and early '00s",
+    choiceA: "Sayerville",
+    choiceB: "New Brunswick",
+    choiceC: "Princeton",
+    choiceD: "Newark"
+  },
+  //question 16
+  {
+    question: "What famous blues guitairst was rumored to sell his soul to the devil for his guitar skills?",
+    choiceA: "Jimi Hendrix",
+    choiceB: "Lonnie Johnson",
+    choiceC: "Robert Johnson",
+    choiceD: "Big Bill Broozy"
+  },
+  // question 17
+  {
+    question: "Syncopation is a concept heavily used in Jazz. What does it mean?",
+    choiceA: "Stressing or highlighting the 'off' or 'weak' beat in a song",
+    choiceB: "A classic 4/4 beat",
+    choiceC: "When a singer purposely sings off key",
+    choiceD: "A layered guitar tone"
 
-
-]
+  },
+  // question 18
+  {
+    question: "What musical genre did bands like Fugazi, Drive Like Jehu, and At The Drive In pioneer",
+    choiceA: "Post-Rock",
+    choiceB: "Post-Hardcore",
+    choiceC: "Post-Punk",
+    choiceD: "Metalcore"
+  },
+  // question 19
+  {
+    question: "What genre of electronic music shaped the early rave scene in England and Germany?",
+    choiceA: "Trance",
+    choiceB: "Big Room House",
+    choiceC: "Drum and Bass",
+    choiceD: "Techno"
+  },
+  // question 20
+  {
+    question: "Where did the wildly influential proto-punk band Velvet Underground play their first show",
+    choiceA: "CBGBs",
+    choiceB: "Andy Warhol's Factory",
+    choiceC: "Summit High School in Summit, New Jersey",
+    choiceD: "The Funhouse"
+  },
+];
