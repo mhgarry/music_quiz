@@ -114,9 +114,7 @@ body {
 	100% { opacity: 0; }
 }
 
-.hidden {
-  display: none;
-}
+
 
 .quiz-container {
   min-height: vh100;
@@ -198,5 +196,9 @@ body {
   margin-right: 10px;
 }
 .score {
-  margin-left: 10px;
+  margin-left: 10p
+}
+
+.hidden {
+  display: none;
 }
