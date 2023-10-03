@@ -18,3 +18,10 @@ let time = 10;
 // current score
 let score = 0;
 
+const quizStart = () => {
+  
+}
+
+startBtn.addEventListener('click', () => {
+  quizStart()
+})
