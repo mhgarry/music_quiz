@@ -18,23 +18,30 @@ let currentQuestion = 0;
 // current score
 let score = 0;
 
-// const startTimer = () => {
-//  let time = 10;
-//  time = setInterval(() => {
-//   time --
-//  }, 1000)
-//  if (time <=0 ) {
-//   clearInterval(time)
-//  }
-// }
+// function to start the timer when the quiz and each individual question starts
+const startTimer = () => {
+  let time = 10;
+  
+  let timer = setInterval(() => {
+    time--;
+    timeDisplay.innerText = time;
+    if (time <= 0) {
+      clearInterval(timer);
+
+  }}, 1000) //timer points to setInterval function which counts time variable down from 10
+  
+  }
+
 
 //start quiz and hide intro screen and show quiz screen
 const quizStart = () => {
   startBtn.classList.add('hidden');
   introText.classList.add('hidden');
   theQuiz.classList.remove('hidden');
+  
   startTimer();
 };
+
 
 startBtn.addEventListener('click', () => {
   quizStart()
