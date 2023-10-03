@@ -19,9 +19,10 @@ let time = 10;
 let score = 0;
 
 const quizStart = () => {
-  
-}
+  startBtn.classList.add('hidden');
+  introText.classList.add('hidden');
+};
 
 startBtn.addEventListener('click', () => {
   quizStart()
-})
+});
