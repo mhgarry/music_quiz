@@ -3,6 +3,7 @@ const introText = document.querySelector('.word-container');
 const startBtn = document.querySelector('.start-btn');
 const timeDisplay = document.querySelector('.timer');
 const questionTitles = document.querySelector('.question-title');
+const theQuiz = document.querySelector('.quiz-container')
 const questionChoices = document.querySelector('.choices');
 const choiceA = document.querySelector('.A');
 const choiceB = document.querySelector('.B');
@@ -21,6 +22,8 @@ let score = 0;
 const quizStart = () => {
   startBtn.classList.add('hidden');
   introText.classList.add('hidden');
+  theQuiz.classList.remove('hidden');
+  
 };
 
 startBtn.addEventListener('click', () => {
