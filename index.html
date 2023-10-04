@@ -1,59 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Music Quiz</title>
   <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
-  
+
   <header>
     <section class="word-container">
-    <h2 class="prompt-text">Do You Know</p>
-      <p class="word-shuffle">
-        <span>Music?</span>
-        <span>Rock?</span>
-        <span>Indie?</span>
-        <span>Rap?</span>
-        <span>Jazz?</span>
-        <span>EDM?</span>
-     </p>
-  </section>
-  <section>
-    <button class="start-btn">START QUIZ</button>
-  </section>
-  </header> 
-  
+      <h2 class="prompt-text">Do You Know</p>
+        <p class="word-shuffle">
+          <span>Music?</span>
+          <span>Rock?</span>
+          <span>Indie?</span>
+          <span>Rap?</span>
+          <span>Jazz?</span>
+          <span>EDM?</span>
+        </p>
+    </section>
+    <section>
+      <button class="start-btn">START QUIZ</button>
+    </section>
+  </header>
+
   <main>
     <section class="quiz-container hidden">
-      
+
       <section class="question-container">
         <h2 class="question-title"></h2>
         <ul class="choices">
-          <li>
-            <input type="radio" name="choice" value="0" id="1">
-              <label class="A"></label>
-            </input>
-          </li>
-          <li>
-            <input type="radio" name="choice" value="1" id="2">
-              <label class="B"></label>
-            </input>
-          </li>
-          <li>
-            <input type="radio" name="choice" value="2" id="3">
-              <label class="C"></label>
-            </input>
-          </li>
-          <li>
-            <input type="radio" name="choice" value="3" id="4">
-              <label class="D"></label>
-            </input>
-          </li>
+
+          <input type="radio" name="choice" id="choiceA" class="A">
+          <label for="choiceA" class="choice-label"></label>
+
+          <input type="radio" name="choice" id="choiceB" class="B">
+          <label for="choiceB" class="choice-label"></label>
+
+          <input type="radio" name="choice" id="choiceC" class="C">
+          <label for="choiceC" class="choice-label"></label>
+
+          <input type="radio" name="choice" id="choiceD" class="D">
+          <label for="choiceD" class="choice-label"></label>
         </ul>
       </section>
-    
+
       <section class="button-container">
         <button class="submit-btn btn">Submit</button>
         <button class="next-btn btn">Next</button>
@@ -62,13 +56,14 @@
       <section class="timer-score-container">
         <h2 class="timer">10</h2>
         <h2 class="score">Score: 0</h2>
-      </section> 
-    
+      </section>
+
     </section>
-  
-    
+
+
   </main>
 </body>
-  <script src="js/index.js"></script>
-  <script src="js/questions.js"></script>
+<script src="js/index.js"></script>
+<script src="js/questions.js"></script>
+
 </html>
