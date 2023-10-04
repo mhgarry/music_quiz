@@ -4,10 +4,6 @@ const timeDisplay = document.querySelector('.timer');
 const questionTitles = document.querySelector('.question-title');
 const theQuiz = document.querySelector('.quiz-container')
 const questionChoices = document.querySelector('.choices');
-const choiceA = document.querySelector('.A');
-const choiceB = document.querySelector('.B');
-const choiceC = document.querySelector('.C');
-const choiceD = document.querySelector('.D');
 const submitBtn = document.querySelector('.submit-btn');
 const nextBtn = document.querySelector('.next-btn');
 
@@ -50,10 +46,12 @@ const showQuestions = () => {
   const currentQuestionDisplay = questions[currentQuestionIndex];
   // show question title
   questionTitles.textContent = currentQuestionDisplay.question;
-  // show answer choices
-  choiceA.textContent = currentQuestionDisplay.answers.A;
-  choiceB.textContent = currentQuestionDisplay.answers.B;
-  choiceC.textContent = currentQuestionDisplay.answers.C;
-  choiceD.textContent = currentQuestionDisplay.answers.D;
+  // get and append answer choices
+  const currentChoicesDisplay = currentQuestionDisplay.answers;
+  //Loop A through D (the corresponding IDS of each choice button for each choice). The argument in the loop becomes the array of letters which lets me dynamically change the id
+  // of each button and display all 4 answer choices
+  ['A', 'B', 'C', 'D'].forEach(choice => {
+    document.getElementById(`choice${choice}`).textContent = currentChoicesDisplay[choice]
+  })
 };
 
