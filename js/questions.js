@@ -8,6 +8,7 @@ const questions = [
     C: "The Jazz June",
     D: "Embrace",
     },
+    answer: "A"
   },
   // question 2
   {
@@ -18,6 +19,7 @@ const questions = [
     C: "The Cure",
     D: "Joy Division",
     },
+    answer: "D"
   },
   // question 3
   {
@@ -28,6 +30,7 @@ const questions = [
     C: "Morrissey",
     D: "Robert Smith",
     },
+    answer: "C"
   },
   // question 4
   {
@@ -38,16 +41,18 @@ const questions = [
     C: "GZA",
     D: "Nas",
     },
+    answer: "C"
   },
   // question 5
   {
-    question: "What was the band Jawbreaker's second studio album released in 1992?",
+    question: "What was the band Jawbreaker's second studio album released in 1991?",
     answers: {
     A: "Dear You",
     B: "Bivouac",
     C: "24 Hour Revenge Therapy",
     D: "Unfun",
     },
+    answer: "B"
   },
   //question 6
   {
@@ -58,6 +63,7 @@ const questions = [
     C: "Brian Wilson",
     D: "Ian Svenonius",
     },
+    answer: "A"
   },
   //question 7 
   {
@@ -67,7 +73,8 @@ const questions = [
     B: "Robert Plant",
     C: "Jim Morrison",
     D: "Thom Yorke",
-    }
+    },
+    answer: "B"
   },
   // question 8
   {
@@ -78,6 +85,7 @@ const questions = [
     C: "Drum and Bass",
     D: "Grime",
     },
+    answer: "C"
   },
   //question 9
   {
@@ -88,6 +96,7 @@ const questions = [
     C: "Emma Goldman",
     D: "Sigmund Freud",
     },
+    answer: "B"
   },
   //question 10
   {
@@ -98,6 +107,7 @@ const questions = [
     C: "The Get Up Kids",
     D: "Thursday",
     },
+    answer: "A"
   },
   // question 11
   {
@@ -108,6 +118,7 @@ const questions = [
     C: "3",
     D: "2",
     },
+    answer: "D"
   },
   // question 12
   {
@@ -118,6 +129,7 @@ const questions = [
     C: "The genre was created by a band called 'Low Gaze'",
     D: "The genre was created by a band called 'My Bloody Valentine'",
     },
+    answer: "A"
   },
   // question 13
   {
@@ -128,6 +140,7 @@ const questions = [
     C: "Both A and B",
     D: "The pentatonic scale",
     },
+    answer: "C"
   },
   //question 14
   {
@@ -138,6 +151,7 @@ const questions = [
     C: "The Pixies",
     D: "Dinosaur Jr.",
     },
+    answer: "A"
   },
   {
     question: "Where is Bruce Springstean's self proclaimed favorite place to play in his home state of New Jersey?",
@@ -147,6 +161,7 @@ const questions = [
     C: "PNC Arena",
     D: "The Meadowlands"
     },
+    answer: "A"
   },
   // question 15
   {
@@ -157,6 +172,7 @@ const questions = [
     C: "Princeton",
     D: "Newark"
     },
+    answer: "B"
   },
   //question 16
   {
@@ -167,6 +183,7 @@ const questions = [
     C: "Robert Johnson",
     D: "Big Bill Broozy"
     },
+    answer: "C"
   },
   // question 17
   {
@@ -177,7 +194,7 @@ const questions = [
     C: "When a singer purposely sings off key",
     D: "A layered guitar tone"
     },
-
+    answer: "A"
   },
   // question 18
   {
@@ -188,6 +205,7 @@ const questions = [
     C: "Post-Punk",
     D: "Metalcore"
     },
+    answer: "B"
   },
   // question 19
   {
@@ -198,6 +216,7 @@ const questions = [
     C: "Drum and Bass",
     D: "Techno"
     },
+    answer: "A"
   },
   // question 20
   {
@@ -208,5 +227,6 @@ const questions = [
     C: "Summit High School in Summit, New Jersey",
     D: "The Funhouse"
     },
+    answer: "C"
   },
 ];

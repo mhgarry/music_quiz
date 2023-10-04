@@ -14,7 +14,8 @@ const nextBtn = document.querySelector('.next-btn');
 
 //question index for array
 const currentQuestionIndex = 0;
-
+// starting score
+let score = 0;
 
 // functoin to create title and choices display on quiz
 // Function to create title and choices display on quiz
@@ -29,8 +30,29 @@ const showQuestions = () => {
   choiceC.textContent = currentQuestionDisplay.answers.C;
   choiceD.textContent = currentQuestionDisplay.answers.D;
 };
-
 // add functionality to submit button
+const submitAnswer = (choice) => {
+  // sets the choices and their values
+  const selectedChoice = choice.currentTarget.choice;
+
+  // Check if the selected choice is equal to the correct answer for the current question
+  if (selectedChoice === questions[currentQuestionIndex].answer) {
+    score += 5; // Adds 5 points for the correct answer
+  }
+  
+  // Move to a random question
+  currentQuestionIndex = Math.floor(Math.random() * questions.length);
+  
+  // Check if all questions are cycled through
+  if (currentQuestionIndex === 0) {
+    // End the quiz function
+    endQuiz();
+  } else {
+    // Show the next question
+    showQuestions();
+  }
+};
+
 
 // function to start the timer when the quiz and each individual question starts
 const startTimer = () => {
@@ -64,7 +86,7 @@ const init = () => {
 startBtn.addEventListener('click', () => {
   init()
 });
-//event listener attached to submit button 
-// submitBtn.addEventListener('click', () => {
-//   
-// })
+//event listener attached to submit button to add functionality 
+submitBtn.addEventListener('click', () => {
+  submitAnswer 
+})
