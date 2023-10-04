@@ -1,5 +1,4 @@
 // constant variables to be used in quiz application
-const introText = document.querySelector('.word-container');
 const startBtn = document.querySelector('.start-btn');
 const timeDisplay = document.querySelector('.timer');
 const questionTitles = document.querySelector('.question-title');
@@ -17,30 +16,20 @@ const currentQuestionIndex = 0;
 // starting score
 let score = 0;
 
-// functoin to create title and choices display on quiz
-// Function to create title and choices display on quiz
-const showQuestions = () => {
-  // set the question to be displayed using question index
-  const currentQuestionDisplay = questions[currentQuestionIndex];
-  // show question title
-  questionTitles.textContent = currentQuestionDisplay.question;
-  // show answer choices
-  choiceA.nextElementSibling.textContent = currentQuestionDisplay.answers.A;
-  choiceB.nextElementSibling.textContent = currentQuestionDisplay.answers.B;
-  choiceC.nextElementSibling.textContent = currentQuestionDisplay.answers.C;
-  choiceD.nextElementSibling.textContent = currentQuestionDisplay.answers.D;
+// initiate quiz and start functions
+const init = () => {
+  quizStart();
+  startTimer();
+  showQuestions();
 };
-// add functionality to submit button
-const submitAnswer = (choice) => {
-  // create the option to select one of the answer choices indicated by radio buttons
-  const selectedChoice = document.querySelector('input[name"choice"]:checked')
 
-  // checks to see the value of the selected choice to register as the answer
-  if (selectedChoice) {
-    const selectedAnswer = selectedChoice.value;
-  }
- };
+startBtn.addEventListener('click', init); //runs init function on click
 
+//start quiz and hide intro screen and show quiz screen
+const quizStart = () => {
+  startBtn.classList.add('hidden');
+  theQuiz.classList.remove('hidden'); 
+};
 
 // function to start the timer when the quiz and each individual question starts
 const startTimer = () => {
@@ -55,26 +44,16 @@ const startTimer = () => {
   }}, 1000) //timer points to setInterval function which counts time variable down from 10
 };
 
-// submit answer and add score to total score
-
-
-//start quiz and hide intro screen and show quiz screen
-const quizStart = () => {
-  startBtn.classList.add('hidden');
-  introText.classList.add('hidden');
-  theQuiz.classList.remove('hidden'); 
+// functoin to create title and choices display on quiz
+const showQuestions = () => {
+  // set the question to be displayed using question index
+  const currentQuestionDisplay = questions[currentQuestionIndex];
+  // show question title
+  questionTitles.textContent = currentQuestionDisplay.question;
+  // show answer choices
+  choiceA.textContent = currentQuestionDisplay.answers.A;
+  choiceB.textContent = currentQuestionDisplay.answers.B;
+  choiceC.textContent = currentQuestionDisplay.answers.C;
+  choiceD.textContent = currentQuestionDisplay.answers.D;
 };
-// initiate quiz and start functions
-const init = () => {
-  quizStart();
-  startTimer();
-  showQuestions();
-};
-//event listener attached to the start button that triggers the init function
-startBtn.addEventListener('click', () => {
-  init()
-});
-//event listener attached to submit button to add functionality 
-submitBtn.addEventListener('click', () => {
-  submitAnswer();
-})
+
