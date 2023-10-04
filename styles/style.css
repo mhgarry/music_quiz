@@ -142,6 +142,7 @@ body {
 
 .question-title {
   text-align: center;
+  font: #000000;
 }
 
 .choices {
