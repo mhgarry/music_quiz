@@ -56,6 +56,7 @@ const showQuestions = () => {
   <button>${C}</button>
   <button>${D}</button>`;
   const correctAnswer = questions[currentQuestionIndex].answer;
+  console.log(correctAnswer)
 };
 
 // function to check if answer is correct

@@ -153,6 +153,7 @@ const questions = [
     },
     answer: "Pavement",
   },
+  // question 15
   {
     question: "Where is Bruce Springstean's self proclaimed favorite place to play in his home state of New Jersey?",
     answers: {
@@ -163,7 +164,7 @@ const questions = [
     },
     answer: "The Stone Pony",
   },
-  // question 15
+  // question 16
   {
     question: "What city in central New Jersey is knwon for passionate basement shows in the late '90s and early '00s",
     answers: {
