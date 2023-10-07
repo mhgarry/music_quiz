@@ -8,7 +8,7 @@ const questions = [
     C: "The Jazz June",
     D: "Embrace",
     },
-    answer: "A"
+    answer: "Rites of Spring",
   },
   // question 2
   {
@@ -19,7 +19,7 @@ const questions = [
     C: "The Cure",
     D: "Joy Division",
     },
-    answer: "D"
+    answer: "Joy Division",
   },
   // question 3
   {
@@ -30,7 +30,7 @@ const questions = [
     C: "Morrissey",
     D: "Robert Smith",
     },
-    answer: "C"
+    answer: "Morrissey"
   },
   // question 4
   {
@@ -41,7 +41,7 @@ const questions = [
     C: "GZA",
     D: "Nas",
     },
-    answer: "C"
+    answer: "GZA",
   },
   // question 5
   {
@@ -52,7 +52,7 @@ const questions = [
     C: "24 Hour Revenge Therapy",
     D: "Unfun",
     },
-    answer: "B"
+    answer: "Bivouac",
   },
   //question 6
   {
@@ -63,7 +63,7 @@ const questions = [
     C: "Brian Wilson",
     D: "Ian Svenonius",
     },
-    answer: "A"
+    answer: "Ian MacKaye",
   },
   //question 7 
   {
@@ -74,7 +74,7 @@ const questions = [
     C: "Jim Morrison",
     D: "Thom Yorke",
     },
-    answer: "B"
+    answer: "Robert Plant",
   },
   // question 8
   {
@@ -85,7 +85,7 @@ const questions = [
     C: "Drum and Bass",
     D: "Grime",
     },
-    answer: "C"
+    answer: "Drum and Bass",
   },
   //question 9
   {
@@ -96,7 +96,7 @@ const questions = [
     C: "Emma Goldman",
     D: "Sigmund Freud",
     },
-    answer: "B"
+    answer: "Anne Frank",
   },
   //question 10
   {
@@ -107,7 +107,7 @@ const questions = [
     C: "The Get Up Kids",
     D: "Thursday",
     },
-    answer: "A"
+    answer: "Brand New",
   },
   // question 11
   {
@@ -118,7 +118,7 @@ const questions = [
     C: "3",
     D: "2",
     },
-    answer: "D"
+    answer: "2",
   },
   // question 12
   {
@@ -129,7 +129,7 @@ const questions = [
     C: "The genre was created by a band called 'Low Gaze'",
     D: "The genre was created by a band called 'My Bloody Valentine'",
     },
-    answer: "A"
+    answer: "Artists would stare at their pedal boards while playing live shows",
   },
   // question 13
   {
@@ -140,7 +140,7 @@ const questions = [
     C: "Both A and B",
     D: "The pentatonic scale",
     },
-    answer: "C"
+    answer: "Both A and B",
   },
   //question 14
   {
@@ -151,7 +151,7 @@ const questions = [
     C: "The Pixies",
     D: "Dinosaur Jr.",
     },
-    answer: "A"
+    answer: "Pavement",
   },
   {
     question: "Where is Bruce Springstean's self proclaimed favorite place to play in his home state of New Jersey?",
@@ -159,9 +159,9 @@ const questions = [
     A: "The Stone Pony",
     B: "Madison Square Garden",
     C: "PNC Arena",
-    D: "The Meadowlands"
+    D: "The Meadowlands",
     },
-    answer: "A"
+    answer: "The Stone Pony",
   },
   // question 15
   {
@@ -170,9 +170,9 @@ const questions = [
     A: "Sayerville",
     B: "New Brunswick",
     C: "Princeton",
-    D: "Newark"
+    D: "Newark",
     },
-    answer: "B"
+    answer: "New Brunswick",
   },
   //question 16
   {
@@ -181,9 +181,9 @@ const questions = [
     A: "Jimi Hendrix",
     B: "Lonnie Johnson",
     C: "Robert Johnson",
-    D: "Big Bill Broozy"
+    D: "Big Bill Broozy",
     },
-    answer: "C"
+    answer: "Robert Johnson",
   },
   // question 17
   {
@@ -192,9 +192,9 @@ const questions = [
     A: "Stressing or highlighting the 'off' or 'weak' beat in a song",
     B: "A classic 4/4 beat",
     C: "When a singer purposely sings off key",
-    D: "A layered guitar tone"
+    D: "A layered guitar tone",
     },
-    answer: "A"
+    answer: "Stressing or highlighting the 'off' or 'weak' beat in a song",
   },
   // question 18
   {
@@ -203,9 +203,9 @@ const questions = [
     A: "Post-Rock",
     B: "Post-Hardcore",
     C: "Post-Punk",
-    D: "Metalcore"
+    D: "Metalcore",
     },
-    answer: "B"
+    answer: "Post-Hardcore",
   },
   // question 19
   {
@@ -214,9 +214,9 @@ const questions = [
     A: "Trance",
     B: "Big Room House",
     C: "Drum and Bass",
-    D: "Techno"
+    D: "Techno",
     },
-    answer: "A"
+    answer: "Trance",
   },
   // question 20
   {
@@ -225,8 +225,8 @@ const questions = [
     A: "CBGBs",
     B: "Andy Warhol's Factory",
     C: "Summit High School in Summit, New Jersey",
-    D: "The Funhouse"
+    D: "The Funhouse",
     },
-    answer: "C"
+    answer: "Summit High School in Summit, New Jersey",
   },
 ];

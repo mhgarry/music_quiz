@@ -4,11 +4,10 @@ const timeDisplay = document.querySelector('.timer');
 const questionTitles = document.querySelector('.question-title');
 const theQuiz = document.querySelector('.quiz-container')
 const questionChoices = document.querySelector('.choices');
-const submitBtn = document.querySelector('.submit-btn');
-const nextBtn = document.querySelector('.next-btn');
+
 
 //question index for array
-const currentQuestionIndex = 0;
+let currentQuestionIndex = 0;
 // starting score
 let score = 0;
 
@@ -45,20 +44,50 @@ const showQuestions = () => {
   //sets current question title
   const currentQuestion = questions[currentQuestionIndex].question;
   //sets choice variables
-  const choiceA = questions[currentQuestionIndex].answers.A;
-  const choiceB = questions[currentQuestionIndex].answers.B;
-  const choiceC = questions[currentQuestionIndex].answers.C;
-  const choiceD = questions[currentQuestionIndex].answers.D;
+  const A = questions[currentQuestionIndex].answers.A;
+  const B = questions[currentQuestionIndex].answers.B;
+  const C = questions[currentQuestionIndex].answers.C;
+  const D = questions[currentQuestionIndex].answers.D;
+  //sets current question title and choices
+  questionTitles.innerText = currentQuestion;
+  questionChoices.innerHTML =   
+ `<button>${A}</button>
+  <button>${B}</button>
+  <button>${C}</button>
+  <button>${D}</button>`;
+  const correctAnswer = questions[currentQuestionIndex].answer;
+};
 
-  // loops through questions array and displays current question and choices
-  for (let i = 0; i < questions.length; i++) {
-    questionTitles.innerText = currentQuestion;
-    questionChoices.innerHTML = `<button>${choiceA}</button>
-    <button>${choiceB}</button>
-    <button>${choiceC}</button>
-    <button>${choiceD}</button>`;
+// function to check if answer is correct
+const showNextQuestion = () => {
+  currentQuestionIndex++;
+  showQuestions();
+};
 
-  }};
+const checkAnswer = (correctAnswer, userAnswer) => {
+  if (correctAnswer === userAnswer) {
+    score++;
+    console.log(score);
+    showNextQuestion();
+  } else {
+    showNextQuestion();
+  }
+} 
 
-  startBtn.addEventListener('click', () => {});
+// event listener for answer buttons
+questionChoices.addEventListener('click', (event) => {
+  const userAnswer = event.target.innerText;
+  const correctAnswer = questions[currentQuestionIndex].answer;
+  checkAnswer(correctAnswer, userAnswer);
+});
+  
+  // // loops through questions array and displays current question and choices
+  // for (let i = 0; i < questions.length; i++) {}
+  //   questionTitles.innerText = currentQuestion;
+  //   questionChoices.innerHTML = `<button>${A}</button>
+  //   <button>${B}</button>
+  //   <button>${C}</button>
+  //   <button>${D}</button>`;
+
+
 
