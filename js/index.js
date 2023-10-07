@@ -84,4 +84,13 @@ questionChoices.addEventListener('click', (event) => {
   const userAnswer = event.target.innerText;
   const correctAnswer = questions[currentQuestionIndex].answer;
   checkAnswer(correctAnswer, userAnswer);
+  endQuiz();
 });
+
+const endQuiz = () => {
+  if (questions.length === currentQuestionIndex) {
+    clearInterval(timer);
+    theQuiz.classList.add('hidden');
+    console.log('quiz over');
+  } 
+}
