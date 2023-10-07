@@ -69,8 +69,6 @@ const checkAnswer = (correctAnswer, userAnswer) => {
     score++;
     console.log(score);
     showNextQuestion();
-  } else {
-    showNextQuestion();
   }
 } 
 
