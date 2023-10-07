@@ -40,18 +40,25 @@ const startTimer = () => {
   }}, 1000) //timer points to setInterval function which counts time variable down from 10
 };
 
-// functoin to create title and choices display on quiz
+// function to show questions and choices 
 const showQuestions = () => {
-  // set the question to be displayed using question index
-  const currentQuestionDisplay = questions[currentQuestionIndex];
-  // show question title
-  questionTitles.textContent = currentQuestionDisplay.question;
-  // get and append answer choices
-  const currentChoicesDisplay = currentQuestionDisplay.answers;
-  //Loop A through D (the corresponding IDS of each choice button for each choice). The argument in the loop becomes the array of letters which lets me dynamically change the id
-  // of each button and display all 4 answer choices
-  ['A', 'B', 'C', 'D'].forEach(choice => {
-    document.getElementById(`choice${choice}`).textContent = currentChoicesDisplay[choice]
-  })
-};
+  //sets current question title
+  const currentQuestion = questions[currentQuestionIndex].question;
+  //sets choice variables
+  const choiceA = questions[currentQuestionIndex].answers.A;
+  const choiceB = questions[currentQuestionIndex].answers.B;
+  const choiceC = questions[currentQuestionIndex].answers.C;
+  const choiceD = questions[currentQuestionIndex].answers.D;
+
+  // loops through questions array and displays current question and choices
+  for (let i = 0; i < questions.length; i++) {
+    questionTitles.innerText = currentQuestion;
+    questionChoices.innerHTML = `<button>${choiceA}</button>
+    <button>${choiceB}</button>
+    <button>${choiceC}</button>
+    <button>${choiceD}</button>`;
+
+  }};
+
+  startBtn.addEventListener('click', () => {});
 
