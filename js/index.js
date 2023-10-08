@@ -11,7 +11,6 @@ const userInitialsInput = document.querySelector('.name');
 
 const endScore = document.querySelector('.final-score');
 const submitScore = document.querySelector('.submit-score');
-const highScores = document.querySelector('.high-score');
 const restartBtn = document.querySelector('.restart-btn');
 // use the Fisher-Yates shuffle algorithm to shuffle the questions array to randomize the question order
 
@@ -94,29 +93,6 @@ const nextQuestion = () => {
   showQuestions();
 };
 
-// function to check answer
-// const checkAnswer = (input, answer) => {
-  
-//   input = input.target.innerText;
-//   if (questions[currentQuestionIndex]) {
-//   answer = questions[currentQuestionIndex].answer;
-//   } else {
-//     console.error('No question found')
-//   }
-//   if (input === answer) {
-//     score++;
-//     scoreDisplay.innerHTML = `<span>Score:</span>${score}`;
-    
-//     console.log('correct');
-//   }
-//   else {
-//     console.log('incorrect');
-//   }
-//   if (currentQuestionIndex < questions.length) {
-//   nextQuestion(); 
-// } else {
-//   endQuiz();
-// }};
 const checkAnswer = (input) => {
   const selectedAnswer = input.target.innerText;
   const currentQuestion = questions[currentQuestionIndex];
@@ -141,34 +117,32 @@ const checkAnswer = (input) => {
   }
 };
 
-const enterIntials = () => {
- const initials = userInitialsInput.value.trim();
- userInitialsInput.innerText = initials;
- console.log(initials)
-}
+const enterResults = () => {
+  const userInitials = userInitialsInput.value.trim();
+  userInitialsInput.innerText = userInitials;
 
-const finalScoreDisplay = () => {
-if ( currentQuestionIndex < questions.length - 1) {
-   return score;
-}
-  endScore.innerText = `Your Final Score: ${score}!`;
-}
+  endScore.innerText = score;
 
-const saveScore = () => {
-  const userScore = JSON.stringify(('endScore'))
-  localStorage.setItem(userScore);
-  console.log(userScore)
+  const savePair = {
+    finalScore: score,
+    initials: userInitials,
+  };
 
-}
+  let allScores = JSON.parse(localStorage.getItem('allScores')) || [];
+  allScores.push(savePair);
+  localStorage.setItem('allScores', JSON.stringify(allScores));
+};
+
+
 const endQuiz = () => {
   theQuiz.classList.add('hidden');
   timeDisplay.classList.add('hidden');
   results.classList.remove('hidden');
-  finalScoreDisplay();
+  enterResults();
+
 };
 // event listener for user input
 userInput.forEach((input) => {
   input.addEventListener('click', checkAnswer);
 });
 // event listener for entering initials 
-submitScore.addEventListener('click', enterIntials)
