@@ -158,12 +158,22 @@ body {
   flex-flow: column;
   overflow: hidden;
   background: #fffff5;
+  
 }
 
 .btn {
-  background: #000000;
+  flex: display;
+  justify-content:space-between;
+  margin: 1rem;
 }
-
+.choices {
+  display: flex;
+  margin: .3rem;
+  background: #000000;
+  color: #fffff5;
+  text-align: center;
+  border-radius: .1rem;
+}
 .submit-btn {
   background-color:#000000;
   color: #fffff5;

@@ -73,10 +73,10 @@ const showQuestions = () => {
     // sets current question title and choices
     questionChoices.innerHTML = `
     <div class="choices-container">
-      <button>${A}</button>
-      <button>${B}</button>
-      <button>${C}</button>
-      <button>${D}</button>
+      <button class="choices">${A}</button>
+      <button class="choices">${B}</button>
+      <button class="choices">${C}</button>
+      <button class="choices">${D}</button>
     </div>
   `;
   } else {
