@@ -134,6 +134,7 @@ const enterResults = () => {
 };
 
 
+
 const endQuiz = () => {
   theQuiz.classList.add('hidden');
   timeDisplay.classList.add('hidden');
@@ -146,3 +147,4 @@ userInput.forEach((input) => {
   input.addEventListener('click', checkAnswer);
 });
 // event listener for entering initials 
+submitScore.addEventListener('click', enterResults);
