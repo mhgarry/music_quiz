@@ -137,12 +137,21 @@ const highScoreDisplay = () => {
   allScores = JSON.parse(allScores);
 
   if (allScores !== null) {
-    for (let i = 0; i < allScores.length; i++) {
-      let createList = document.createElement('li');
-      createList.textContent = `${allScores[i].initials}: ${allScores[i].finalScore}`; // Use finalScore instead of score
-      highScores.appendChild(createList);
+      //sort scores in descending order
+      allScores.sort((a, b) => b.finalScore - a.finalScore);
+      //define top 5 scores
+      const topScores = allScores.slice(0, 5)
+
+      //clear high score container
+      highScores.innerHtml = '';
+      //display top 5 scores
+      topScores.forEach((score, index) => {
+        const highScoreList = document.createElement('li');
+        highScoreList.textContent = `${index + 1}. ${score.initials}: ${score.finalScore}`;
+        highScores.append(highScoreList);
+      });
+
     };
-  };
 };
 // function to end quiz and perform needed inputs
 const endQuiz = () => {
