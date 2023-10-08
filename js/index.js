@@ -6,7 +6,9 @@ const theQuiz = document.querySelector('.quiz-container')
 const questionChoices = document.querySelector('.btn');
 const scoreDisplay = document.querySelector('.score');
 const userInput = document.querySelectorAll('.btn');  // selects all buttons  
-const results = document.querySelector('.results-container');
+const results = document.querySelector('.result-container');
+const userInitialsInput = document.querySelector('.name');
+
 const endScore = document.querySelector('.final-score');
 const submitScore = document.querySelector('.submit-score');
 const highScores = document.querySelector('.high-score');
@@ -50,8 +52,10 @@ const startTimer = () => {
     timeDisplay.innerText = time;
     if (time <= 0) {
       clearInterval(timer);
+      // endQuiz();
+      nextQuestion();
     }
-  }, 1000); // timer points to setInterval function which counts time variable down from 10
+  }, 1000);
 };
 
 // function to show questions and choices 
@@ -90,35 +94,68 @@ const nextQuestion = () => {
 };
 
 // function to check answer
-const checkAnswer = (input, answer) => {
+// const checkAnswer = (input, answer) => {
   
-  input = input.target.innerText;
-  if (questions[currentQuestionIndex]) {
-  answer = questions[currentQuestionIndex].answer;
-  } else {
-    console.error('No question found')
-  }
-  if (input === answer) {
-    score++;
-    scoreDisplay.innerHTML = `<span>Score:</span>${score}`;
+//   input = input.target.innerText;
+//   if (questions[currentQuestionIndex]) {
+//   answer = questions[currentQuestionIndex].answer;
+//   } else {
+//     console.error('No question found')
+//   }
+//   if (input === answer) {
+//     score++;
+//     scoreDisplay.innerHTML = `<span>Score:</span>${score}`;
     
-    console.log('correct');
+//     console.log('correct');
+//   }
+//   else {
+//     console.log('incorrect');
+//   }
+//   if (currentQuestionIndex < questions.length) {
+//   nextQuestion(); 
+// } else {
+//   endQuiz();
+// }};
+const checkAnswer = (input) => {
+  const selectedAnswer = input.target.innerText;
+  const currentQuestion = questions[currentQuestionIndex];
+  
+  if (currentQuestion) {
+    const correctAnswer = currentQuestion.answer;
+    if (selectedAnswer === correctAnswer) {
+      score++;
+      scoreDisplay.innerHTML = `<span>Score:</span>${score}`;
+      console.log('correct');
+    } else {
+      console.log('incorrect');
+    }
+
+    if (currentQuestionIndex < questions.length - 1) {
+      nextQuestion();
+    } else {
+      endQuiz();
+    }
+  } else {
+    console.error('No question found');
   }
-  else {
-    console.log('incorrect');
-  }
-  if (currentQuestionIndex < questions.length) {
-  nextQuestion(); 
-} else {
-  endQuiz();
-}};
+};
+
+const enterIntials = () => {
+ const initials = userInitialsInput.value.trim();
+ userInitialsInput.innerText = initials;
+ console.log(initials)
+}
 
 const endQuiz = () => {
   theQuiz.classList.add('hidden');
   timeDisplay.classList.add('hidden');
+  results.classList.remove('hidden');
+  
 
 }
 // event listener for user input
 userInput.forEach((input) => {
   input.addEventListener('click', checkAnswer);
 });
+
+submitScore.addEventListener('click', enterIntials)
