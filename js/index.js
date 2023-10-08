@@ -107,10 +107,17 @@ const checkAnswer = (input, answer) => {
   else {
     console.log('incorrect');
   }
-  nextQuestion();
-};
+  if (currentQuestionIndex < questions.length) {
+  nextQuestion(); 
+} else {
+  endQuiz();
+}};
 
+const endQuiz = () => {
+  theQuiz.classList.add('hidden');
+  timeDisplay.classList.add('hidden');
 
+}
 // event listener for user input
 userInput.forEach((input) => {
   input.addEventListener('click', checkAnswer);
