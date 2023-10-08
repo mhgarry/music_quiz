@@ -8,17 +8,16 @@ const scoreDisplay = document.querySelector('.score');
 const userInput = document.querySelectorAll('.btn');  // selects all buttons  
 const results = document.querySelector('.result-container');
 const userInitialsInput = document.querySelector('.name');
-
+const highScores = document.querySelector('.high-scores');
 const endScore = document.querySelector('.final-score');
 const submitScore = document.querySelector('.submit-score');
-const restartBtn = document.querySelector('.restart-btn');
-// use the Fisher-Yates shuffle algorithm to shuffle the questions array to randomize the question order
 
 // question index for array
 let currentQuestionIndex = 0;
 // starting score
 let score = 0;
 let timer;  // Declare timer variable outside the startTimer function
+// use the Fisher-Yates shuffle algorithm to shuffle the questions array to randomize the question order
 
 const shuffleIndex = (index) => {
   for (let i = index.length - 1; i > 0; i--) {
@@ -92,7 +91,7 @@ const nextQuestion = () => {
   startTimer();
   showQuestions();
 };
-
+// function to check if the answer is correct and add score
 const checkAnswer = (input) => {
   const selectedAnswer = input.target.innerText;
   const currentQuestion = questions[currentQuestionIndex];
@@ -116,12 +115,12 @@ const checkAnswer = (input) => {
     console.error('No question found');
   }
 };
-
+//function to enter a quiz instances results into local storage
 const enterResults = () => {
   const userInitials = userInitialsInput.value.trim();
   userInitialsInput.innerText = userInitials;
 
-  endScore.innerText = score;
+  endScore.innerText = `You Scored: ${score}`;
 
   const savePair = {
     finalScore: score,
@@ -132,14 +131,26 @@ const enterResults = () => {
   allScores.push(savePair);
   localStorage.setItem('allScores', JSON.stringify(allScores));
 };
+//function to display high scores using the scores we fetched from local storage
+const highScoreDisplay = () => {
+  let allScores = localStorage.getItem('allScores');
+  allScores = JSON.parse(allScores);
 
-
-
+  if (allScores !== null) {
+    for (let i = 0; i < allScores.length; i++) {
+      let createList = document.createElement('li');
+      createList.textContent = `${allScores[i].initials}: ${allScores[i].finalScore}`; // Use finalScore instead of score
+      highScores.appendChild(createList);
+    }
+  }
+};
+// function to end quiz and perform needed inputs
 const endQuiz = () => {
   theQuiz.classList.add('hidden');
   timeDisplay.classList.add('hidden');
   results.classList.remove('hidden');
   enterResults();
+  highScoreDisplay();
 
 };
 // event listener for user input
