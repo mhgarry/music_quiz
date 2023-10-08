@@ -6,7 +6,13 @@ const theQuiz = document.querySelector('.quiz-container')
 const questionChoices = document.querySelector('.btn');
 const scoreDisplay = document.querySelector('.score');
 const userInput = document.querySelectorAll('.btn');  // selects all buttons  
-
+// use the Fisher-Yates shuffle algorithm to shuffle the questions array to randomize the question order
+const shuffleIndex = (index) => {
+  for (let i = index.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    [index[i], index[randomIndex]] = [index[randomIndex], index[i]];
+  }
+}
 // question index for array
 let currentQuestionIndex = 0;
 // starting score
@@ -15,6 +21,7 @@ let timer;  // Declare timer variable outside the startTimer function
 
 // initiate quiz and start functions
 const init = () => {
+  shuffleIndex(questions);
   quizStart();
   showQuestions();
   startTimer();
@@ -77,10 +84,15 @@ const checkAnswer = (input, answer) => {
   answer = questions[currentQuestionIndex].answer;
   if (input === answer) {
     score++;
-    scoreDisplay.innerText = score;
-    console.log(score);
+    scoreDisplay.innerHTML = `<span>Score:</span>${score}`;
+    
+    console.log('correct');
+  }
+  else {
+    console.log('incorrect');
   }
   nextQuestion();
+
 };
 
 // event listener for user input
