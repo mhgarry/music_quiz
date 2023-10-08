@@ -92,7 +92,18 @@ const checkAnswer = (input, answer) => {
     console.log('incorrect');
   }
   nextQuestion();
+};
+//save scores to local storage 
+const saveScore = () => {
+  const finalScore = document.querySelector('.final-score').value;
+  const userInitials = document.querySelector('#name').value
+  localStorage.setItem('User Score', finalScore);
+  localStorage.setItem('User Intials', userInitials);
+};
 
+const getScores = () => {
+  const finalScore = localStorage.getItem(finalScore);
+  const userInitials = localStorage.getItem(userInitials);
 };
 
 // event listener for user input
