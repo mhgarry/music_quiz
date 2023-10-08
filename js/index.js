@@ -12,7 +12,7 @@ const userInitialsInput = document.querySelector('.name');
 const endScore = document.querySelector('.final-score');
 const submitScore = document.querySelector('.submit-score');
 const highScores = document.querySelector('.high-score');
-const restart = document.querySelector('.restart-btn');
+const restartBtn = document.querySelector('.restart-btn');
 // use the Fisher-Yates shuffle algorithm to shuffle the questions array to randomize the question order
 
 // question index for array
@@ -34,6 +34,7 @@ const init = () => {
   quizStart();
   showQuestions();
   startTimer();
+  results.classList.add('hidden')
 };
 
 startBtn.addEventListener('click', init); // runs init function on click
@@ -146,16 +147,28 @@ const enterIntials = () => {
  console.log(initials)
 }
 
+const finalScoreDisplay = () => {
+if ( currentQuestionIndex < questions.length - 1) {
+   return score;
+}
+  endScore.innerText = `Your Final Score: ${score}!`;
+}
+
+const saveScore = () => {
+  const userScore = JSON.stringify(('endScore'))
+  localStorage.setItem(userScore);
+  console.log(userScore)
+
+}
 const endQuiz = () => {
   theQuiz.classList.add('hidden');
   timeDisplay.classList.add('hidden');
   results.classList.remove('hidden');
-  
-
-}
+  finalScoreDisplay();
+};
 // event listener for user input
 userInput.forEach((input) => {
   input.addEventListener('click', checkAnswer);
 });
-
+// event listener for entering initials 
 submitScore.addEventListener('click', enterIntials)
