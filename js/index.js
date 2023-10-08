@@ -11,7 +11,7 @@ const userInitialsInput = document.querySelector('.name');
 const highScores = document.querySelector('.high-scores');
 const endScore = document.querySelector('.final-score');
 const submitScore = document.querySelector('.submit-score');
-
+const restartBtn = document.querySelector('.restart-btn')
 // question index for array
 let currentQuestionIndex = 0;
 // starting score
@@ -151,7 +151,6 @@ const endQuiz = () => {
   results.classList.remove('hidden');
   enterResults();
   highScoreDisplay();
-
 };
 // event listener for user input
 userInput.forEach((input) => {
@@ -159,3 +158,10 @@ userInput.forEach((input) => {
 });
 // event listener for entering initials 
 submitScore.addEventListener('click', enterResults);
+restartBtn.addEventListener('click', () => {
+  results.classList.add('hidden');
+  startBtn.classList.remove('hidden');
+  window.location.reload();
+}
+
+)
