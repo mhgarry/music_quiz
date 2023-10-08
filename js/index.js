@@ -143,13 +143,17 @@ const highScoreDisplay = () => {
       const topScores = allScores.slice(0, 5)
 
       //clear high score container
-      highScores.innerHtml = '';
+      highScores.innerHTML = '';
       //display top 5 scores
       topScores.forEach((score, index) => {
         const highScoreList = document.createElement('li');
         highScoreList.textContent = `${index + 1}. ${score.initials}: ${score.finalScore}`;
         highScores.append(highScoreList);
       });
+
+      if (currentQuestionIndex === questions.length) {
+        highScoreDisplay();
+      };
 
     };
 };
