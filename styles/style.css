@@ -138,41 +138,30 @@ body {
   width: 40%;
   border-radius: 2rem;
   margin-bottom: 3%;
+  min-height: 100vh;
 }
 
 .question-title {
   text-align: center;
   font: #000000;
+  margin-bottom: 30%;
 }
 
-.choices {
-  text-align: center;
-  margin-right: 40%;
-  margin-top: 3%;
-}
 
-.A {
-  margin-bottom: 4%;
-}
-.B {
-  margin-bottom: 4%;
-}
-.C {
-  margin-bottom: 4%;
-}
-.D {
-  margin-bottom: 4%;
-}
 
-.button-container {
-  margin-bottom: 4%;
+
+.choices-container {
   background-color: #fffff5;
-  width: 40%;
-  height: 40px;
   border-radius: 2rem;
   display: flex;
   flex-direction: column;
+  flex-flow: column;
   overflow: hidden;
+  background: #fffff5;
+}
+
+.btn {
+  background: #000000;
 }
 
 .submit-btn {
@@ -197,7 +186,15 @@ body {
   margin-right: 10px;
 }
 .score {
-  margin-left: 10p
+  margin-left: 10px;
+}
+
+.result-container {
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 
 .hidden {
