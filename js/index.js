@@ -12,6 +12,7 @@ const highScores = document.querySelector('.high-scores');
 const endScore = document.querySelector('.final-score');
 const submitScore = document.querySelector('.submit-score');
 const restartBtn = document.querySelector('.restart-btn');
+const feedbackDisplay = document.querySelector('.feedback-display');
 // question index for array
 let currentQuestionIndex = 0;
 // starting score
@@ -101,8 +102,10 @@ const checkAnswer = (input) => {
     if (selectedAnswer === correctAnswer) {
       score++;
       scoreDisplay.innerHTML = `<span>Score:</span>${score}`;
+      feedbackDisplay.innerHTML = `<span>Correct!</span>`
       console.log('correct');
     } else {
+      feedbackDisplay.innerHTML = `<span>Wrong!!</span>`
       console.log('incorrect');
     };
 
